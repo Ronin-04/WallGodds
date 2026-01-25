@@ -35,8 +35,10 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/gallery/*" element={<Gallery />} />
+
                     <Route path="/upload" element={<Upload />} />
                     <Route path="/signup" element={<SignUp />} />
+
                     <Route path="/profile" element={<Profile />} />
                     <Route path="/*" element={<Error404 />} />
                 </Routes>
