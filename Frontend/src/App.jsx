@@ -4,7 +4,7 @@ import Loader from "./Components/LoaderModule/Loader";
 import Home from "./Components/HomeModule/Home";
 import Gallery from "./Components/GalleryModule/Gallery";
 import Upload from "./Components/UploadModule/Upload";
-import SignUp from "./Components/CommonModule/SignUpModule/SignUp";
+import SignUp from "./Components/AuthModule/SignUpModule/SignUp";
 import Profile from "./Components/ProfileModule/Profile";
 import Error404 from "./Components/CommonModule/ErrorModule/Error404";
 
