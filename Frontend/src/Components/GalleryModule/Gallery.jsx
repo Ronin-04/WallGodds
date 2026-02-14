@@ -59,6 +59,43 @@ const Gallery = () => {
     }
   }, [location.pathname, navigate]);
 
+  /* Scroll Animation Logic */
+  const navbarRef = useRef(null);
+  const lastScrollTop = useRef(0);
+  const currentTranslate = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const delta = scrollTop - lastScrollTop.current;
+      const navbarHeight = 112 ; // 7rem approx
+      
+      // Calculate new translation
+      let newTranslate = currentTranslate.current - delta;
+      
+      // Clamp translation between -navbarHeight (hidden) and 0 (visible)
+      if (newTranslate > 0) newTranslate = 0;
+      if (newTranslate < -navbarHeight) newTranslate = -navbarHeight;
+      
+      currentTranslate.current = newTranslate;
+      lastScrollTop.current = scrollTop <= 0 ? 0 : scrollTop;
+
+      // Calculate scale based on translation (0 to 1 progress)
+      // 0 translate -> 1 scale
+      // -navbarHeight translate -> 0.9 scale
+      const progress = Math.abs(newTranslate) / navbarHeight;
+      const scale = 1 - (progress * 0.4);
+
+      if (navbarRef.current) {
+        navbarRef.current.style.transform = `translateY(${newTranslate}px) scale(${scale})`;
+        navbarRef.current.style.transition = 'none'; // Ensure no CSS lag
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const sliderRef = useRef(null);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
@@ -90,9 +127,10 @@ const Gallery = () => {
     sliderRef.current.scrollLeft = scrollLeft - walk;
   };
 
+
   return (
     <>
-      <div className={Styles.navbarWrapper}>
+      <div className={Styles.navbarWrapper} ref={navbarRef}>
         <NavBar />
       </div>
 

@@ -22,18 +22,9 @@
   flex-direction: column;
   align-items: center;
 
-  height: 100vh;
+  min-height: 100vh;
   padding-top: 10rem;
   box-sizing: border-box;
-
-  overflow: hidden;
-
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.container::-webkit-scrollbar {
-  display: none;
 }
 
 .temp {
@@ -53,16 +44,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  overflow-y: auto;
-  overflow-x: hidden;
-
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.galleryScrollArea::-webkit-scrollbar {
-  display: none;
 }
 
 .scrollItems {
@@ -193,7 +174,7 @@
 
 @media (max-width: 768px) {
   .navbarWrapper {
-    display: none;
+    display: block;
   }
 
   .footerWrapper {
@@ -201,15 +182,8 @@
   }
 
   .container {
-    height: 100dvh;
     min-height: 100dvh;
-    max-height: 100dvh;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow-y: auto;
-    overflow-x: hidden;
-
     padding-top: 0;
     padding-left: 1rem;
     padding-right: 1rem;
