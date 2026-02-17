@@ -142,6 +142,226 @@ Category: Desktop
 - **Designer**: Harsh Kumar
 - **Category**: Desktop
 
+## 17. [Akshaya]_[Desktop_1].png
+  -  **Title**: Emerald Hillscape
+  -  **Description**: Inspired by the calm rhythm of rolling green hills and moody clouds, capturing nature’s quiet balance.
+  -  **Designer**: Akshaya
+  -  **Category**: Desktop
+
+## 18. [Akshaya]_[Desktop_2].png
+  -  **Title**: Coral Whisper
+  -  **Description**: A close-up celebration of delicate petals, highlighting nature’s soft elegance after rainfall.
+  -  **Designer**: Akshaya
+  -  **Category**: Desktop
+
+## 19. [Akshaya]_[Mobile_1].jpg
+  -  **Title**: Golden Hour Reflections
+  -  **Description**: A serene sunset over still waters, reflecting the warmth and peace of the day’s final light.
+  -  **Designer**: Akshaya
+  -  **Category**: Mobile
+
+## 20. [Akshaya]_[Mobile_2].jpg
+  -  **Title**: Scarlet Bloom Burst
+  -  **Description**: A vibrant expression of life and energy, showcasing nature’s bold and joyful side.
+  -  **Designer**: Akshaya
+  -  **Category**: Mobile
+
+## 21. [Akshaya]_[Tablet_1].jpg
+  -  **Title**: Soft Dusk Glow
+  -  **Description**: Captures the gentle transition between day and night, where the sky melts into golden calm.
+  -  **Designer**: Akshaya
+  -  **Category**: Tablet
+
+## 22. [Akshaya]_[Tablet_2].jpg
+  -  **Title**: Spotted Serenity
+  -  **Description**: Inspired by the intricate beauty of wild blooms, blending purity with subtle detail.
+  -  **Designer**: Akshaya
+  -  **Category**: Tablet
+## 23. [pritha]_[agoodday].png
+- **Title**: A Good Day
+- **Description**: Just an ordinary bright day...
+- **Designer**: Pritha Pal
+- **Category**: Desktop
+
+## 24. [pritha]_[blackboard].png
+- **Title**: A Blackboard
+- **Description**: What a typical engineering lecture hall blackboard looks like!!
+- **Designer**: Pritha Pal
+- **Category**: Desktop
+
+## 25. [pritha]_[circlynight].png
+- **Title**: Circly Night
+- **Description**:Circly round clouds and the actually round moon!!
+- **Designer**: Pritha Pal
+- **Category**: Desktop
+
+## 26. [pritha]_[circlysunset].png
+- **Title**: Circly Sunset
+- **Description**: Long day it was... Looks like the clouds are also round like the sun!
+- **Designer**: Pritha Pal
+- **Category**: Desktop
+
+## 27. [pritha]_[thepanda].png
+- **Title**: The Panda
+- **Description**:You know how cute these black and whites' are right?
+- **Designer**: Pritha Pal
+- **Category**: Desktop
+
+## 28. [pritha]_[thesolarsystem].png
+- **Title**: The Solar System
+- **Description**: Just a tiny attraction in the universe? Yeah! Thats our own Solar System
+- **Designer**: Pritha Pal
+- **Category**: Desktop
+
+## 23.nithyashreea-160-1.png
+- **Title**: Cozy Cat
+- **Description**: A soft pastel illustration created by me featuring a relaxed cat with gentle decorative elements, designed to give a calm and cozy visual experience optimized for tablet screens.
+- **Designer**: Nithya Shree A
+- **Category**: Tablet
+
+## 24.nithyashreea-160-2.jpeg
+- **Title**: Pink Bloom
+- **Description**: A photograph personally captured by me showcasing delicate pink flowers and natural foliage, offering a peaceful and refreshing wallpaper optimized for tablet displays.
+- **Designer**: Nithya Shree A
+- **Category**: Tablet
+
+## 25.nithyashreea-160-3.jpg
+- **Title**: Twin Swans (Sky Blue)
+- **Description**: A minimalistic illustration created by me featuring two symmetrical swans on a soft blue background, emphasizing balance, negative space, and visual calm suitable for desktop use.
+- **Designer**: Nithya Shree A
+- **Category**: Desktop
+
+## 26.nithyashreea-160-4.jpg
+- **Title**: Twin Swans (Coral)
+- **Description**: A clean and minimal illustration created by me with mirrored swan forms on a coral background, using simple shapes and strong contrast for a warm yet uncluttered desktop wallpaper.
+- **Designer**: Nithya Shree A
+- **Category**: Desktop
+
+## 27.nithyashreea-160-5.jpg
+- **Title**: Coastal Pattern
+- **Description**: A playful illustration created by me featuring seashells and starfish arranged in a repeating pattern, inspired by coastal elements and soft pastel tones for desktop backgrounds.
+- **Designer**: Nithya Shree A
+- **Category**: Desktop
+
+## 28.nithyashreea-160-6.jpg
+- **Title**: Comfort Bowl
+- **Description**: A cheerful illustration created by me featuring a bowl of noodles with simple shapes and bright accents, designed as a light-hearted and fun desktop wallpaper.
+- **Designer**: Nithya Shree A
+- **Category**: Desktop
+
+## 29.nithyashreea-160-7.jpg
+- **Title**: Soft Florals
+- **Description**: A gentle floral illustration created by me using muted tones and clean line work, forming a balanced and elegant desktop wallpaper with a calm visual feel.
+- **Designer**: Nithya Shree A
+- **Category**: Desktop
+
+## 30.nithyashreea-160-8.jpg
+- **Title**: Twin Swans (Sun Yellow)
+- **Description**: A minimalistic illustration created by me featuring symmetrical swans on a warm yellow background, focusing on simplicity, symmetry, and clean composition for desktop screens.
+- **Designer**: Nithya Shree A
+- **Category**: Desktop
+
+## 31.nithyashreea-160-9.jpg
+- **Title**: Lavender Pattern
+- **Description**: A soft pastel floral illustration created by me using repeating elements and light colors, designed to create a cheerful yet calm desktop wallpaper.
+- **Designer**: Nithya Shree A
+- **Category**: Desktop
+
+## 32.nithyashreea-160-10.jpeg
+- **Title**: Purple Bloom
+- **Description**: A minimal floral illustration created by me featuring a single purple flower with subtle decorative borders, designed to provide an elegant and calm visual experience for mobile screens.
+- **Designer**: Nithya Shree A
+- **Category**: Mobile
+
+## 33.nithyashreea-160-11.jpeg
+- **Title**: Line Art Florals
+- **Description**: A monochrome line-art illustration created by me combining floral elements and butterflies, focusing on simplicity and clean composition optimized for mobile wallpaper use.
+- **Designer**: Nithya Shree A
+- **Category**: Mobile
+
+## 34.nithyashreea-160-12.jpeg
+- **Title**: Soft Blossom
+- **Description**: A gentle floral illustration created by me featuring soft pink blossoms on a pastel background, designed to give a light and soothing appearance on mobile devices.
+- **Designer**: Nithya Shree A
+- **Category**: Mobile
+
+## 35. [sahithya]_[stay_focused].png
+- **Title**: Stay Focused
+- **Description**: A soft pink minimal wallpaper featuring gentle heart blur elements and calming typography, designed to encourage focus and quiet motivation without visual clutter.
+- **Designer**: Sahithya
+- **Category**: Desktop
+
+## 36. [sahithya]_[mate].png
+- **Title**: We Got This
+- **Description**: A calming blue-toned wallpaper with hand-drawn elements symbolizing support, reassurance, and togetherness — reminding us that challenges are easier when faced together.
+- **Designer**: Sahithya
+- **Category**: Desktop
+
+## 37. [sahithya]_[playlist].png
+- **Title**: My Playlist Against Everything
+- **Description**: A bold and expressive wallpaper inspired by music culture, using retro visuals and strong colors to represent music as motivation, escape, and emotional strength.
+- **Designer**: Sahithya 
+- **Category**: Desktop
+
+## 38. [sahithya]_[sakura].png
+- **Title**: Sakura Reflections
+- **Description**: Inspired by cherry blossoms and quiet reflection, this wallpaper blends soft illustrations and thoughtful text to evoke calmness, balance, and introspection.
+- **Designer**: Sahithya 
+- **Category**: Desktop
+
+## 39. [sahithya]_[luckiest_girl].png
+- **Title**: The Luckiest Girl
+- **Description**: A minimal dark-themed mobile wallpaper with subtle heart accents, expressing gratitude, self-belief, and emotional warmth through simplicity.
+- **Designer**: Sahithya 
+- **Category**: Mobile
+
+## 40. [sahithya]_[luckiest_human].png
+- **Title**: My Loveliest Human
+- **Description**: A calm and intimate mobile wallpaper designed with muted tones and soft typography, celebrating meaningful human connections and emotional closeness.
+- **Designer**: Sahithya 
+- **Category**: Mobile
+
+## 41. [sahithya]_[vision].png
+- **Title**: Trust Your Vision
+- **Description**: A dreamy mobile wallpaper featuring gentle illustrations and motivational text, encouraging confidence in personal goals, creativity, and inner vision.
+- **Designer**: Sahithya 
+- **Category**: Mobile
+
+## 42. [Hasini]_[404].png
+- **Title**: 404 — Motivation Not Found
+- **Description**: A playful 404 screen capturing the mood when motivation goes offline.
+- **Designer**: Hasini Gundrathi
+- **Category**: Desktop
+
+## 43. [Hasini]_[Begin].png
+- **Title**: Just Begin
+- **Description**: A stark, architectural visual that echoes one simple truth—starting is the hardest and most powerful step.
+- **Designer**: Hasini Gundrathi
+- **Category**: Desktop
+
+## 44. [Hasini]_[Captured].png
+- **Title**: Captured
+- **Description**: A quiet sunset by the water, where the city pauses and light lingers a little longer.
+- **Designer**: Hasini Gundrathi
+- **Category**: Desktop
+
+## 45. [Hasini]_[CityScapes].png
+- **Title**: CityScapes
+- **Description**: A sunset in a city where buildings glow and the day slowly exhales.
+- **Designer**: Hasini Gundrathi
+- **Category**: Desktop
+
+## 46. [Hasini]_[Faah!].png
+- **Title**: Faah!
+- **Description**: A minimalist definition for the moment when words feel heavier than silence.
+- **Designer**: Hasini Gundrathi
+- **Category**: Desktop
+
+## 47. [Hasini]_[Love].png
+- **Title**: Love
+- **Description**: A soft, pixel-sweet expression of affection—where feelings say more than words ever could.
+- **Designer**: Hasini Gundrathi
+- **Category**: Mobile
 
 
 WallGodds values creativity and collaboration. We can't wait to see your contributions! If you have any questions or need help, feel free to connect with our community on [Discord](https://discord.gg/kTQ5KWANp8).  
