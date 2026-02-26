@@ -1,4 +1,5 @@
 import { useState, useRef, useCallback } from "react";
+import {useForm }from "react-hook-form";
 import Styles from "./Upload.module.css";
 import NavBar from "../CommonModule/NavBarModule/NavBar";
 import Footer from "../CommonModule/FooterModule/Footer";
@@ -13,11 +14,67 @@ const Upload = () => {
     const [isDraggingOver, setIsDraggingOver] = useState(false);
     const fileInputRef = useRef(null);
 
-    const handleFile = useCallback((file) => {
+    const categories=["Abstract","Nature","Anime","Art","Movies","Vehicles","Sports","Gaming","Travels"
+    ,"Spiritual","Music","AI Gen"];
+   
+    const {
+       register ,
+       handleSubmit,
+       setValue,
+       watch,
+       formState: {errors}
+       }=useForm();
+
+    
+    const onSubmit =(data)=>{
+       if (!previewUrl) {
+    alert("Please upload a wallpaper first");
+    return;
+  }
+    const wallpaper = {
+    wallpaperName: data.wallpaperName,
+    device: data.device,
+    category: data.category,
+    description: data.description || "",
+    image: previewUrl,
+  };
+
+  console.log("Wallpaper Saved:", wallpaper); 
+   
+   };
+    
+   const handleFile = useCallback((file) => { 
         if (!file || !file.type.startsWith("image/")) return;
         const url = URL.createObjectURL(file);
         setPreviewUrl(url);
-    }, []);
+        
+        setValue("device", "");
+        const img=new Image();
+        img.src= url;
+        img.onload = () => {
+           const width = img.width; 
+           const height = img.height; 
+           const longer = Math.max(width, height); 
+           const shorter = Math.min(width, height); 
+           const ratio = longer / shorter; 
+           const isPortrait = height > width; 
+           console.log("Ratio:", ratio.toFixed(2));
+           if(ratio>=2.0){
+            setValue("device","mobile");
+           }
+           else if(ratio>=1.7 && ratio<2.0){
+             if(isPortrait){
+                 setValue("device","mobile"); 
+             }
+             else{
+               setValue("device","laptop");
+             }
+           }
+            else{
+              setValue("device","tablet");
+            }
+          };
+                }, [setValue]);
 
     const handleDragOver = (e) => {
         e.preventDefault();
@@ -43,6 +100,7 @@ const Upload = () => {
         handleFile(e.target.files?.[0]);
         e.target.value = "";
     };
+     
 
     return (
         <>
@@ -51,6 +109,7 @@ const Upload = () => {
             </div>
 
             <div className={Styles.container}>
+                
                 <div
                     className={`${Styles.uploadBox} ${isDraggingOver ? Styles.dragging : ""}`}
                     onDragOver={handleDragOver}
@@ -58,14 +117,125 @@ const Upload = () => {
                     onDrop={handleDrop}
                 >
                     {previewUrl ? (
+                        <div className={Styles.previewFormContainer}>
                         <div className={Styles.previewWrapper}>
                             <img
                                 src={previewUrl}
                                 alt="Selected wallpaper preview"
                                 className={Styles.previewImage}
                             />
+                        </div> 
+                               <form className={Styles.form} onSubmit={handleSubmit(onSubmit)}>
+                                <div className={Styles.row}>
+                                  <div className={Styles.field}>
+                                     {/* Wallpaper Name */}
+                                    <div className={Styles.field}>
+                                     {errors.wallpaperName && (
+                                       <div className={Styles.error}>
+                                        {errors.wallpaperName.message}
+                                       </div>
+                                      )}
+                                      <input
+                                       type="text"
+                                       placeholder="Wallpaper Name"
+                                       className={`${Styles.input} ${errors.wallpaperName ? Styles.errorInput : ""}`}
+                                        {...register("wallpaperName", {
+                                        required: "Wallpaper name is required",
+                                        })}
+                                        />
+                                       </div>
+                                    </div>
+
+
+                                    <div className={Styles.field}>
+                                        {errors.device && (
+                                         <div className={Styles.error}>
+                                         {errors.device.message}
+                                         </div>
+                                        )}
+                                     <select
+                                     defaultValue=""
+                                     className={`${Styles.input} ${errors.device ? Styles.errorInput : ""} ${
+                                      !watch("device") ? Styles.placeholder : ""
+                                      }`}
+                                     {...register("device", {
+                                      required: "Please select a device",
+                                     })}
+                                     >
+                                      <option value="" disabled>
+                                      Choose Device
+                                      </option>
+                                      <option value="tablet">Tablet</option>
+                                      <option value="mobile">Mobile</option>
+                                      <option value="laptop">Laptop</option>
+                                     </select>
+                                  
+                                   </div>
+
+                                  <div className={Styles.field}>                                      
+                                    {errors.category && (
+                                    <div className={Styles.error}>
+                                     {errors.category.message}
+                                   </div>
+                                    )}
+                                   <select
+                                  defaultValue=""
+                                  className={`${Styles.input} ${errors.category ? Styles.errorInput : ""} ${
+                                  !watch("category") ? Styles.placeholder : ""
+                                  }`}
+                                  {...register("category", {
+                                  required: "Please select a category",
+                                  })}
+                                  >
+                                 <option value="" disabled>
+                                  Choose Category
+                                 </option>
+
+                                 {categories.map((cat) => (
+                                 <option key={cat} value={cat.toLowerCase()}>
+                                  {cat}
+                                 </option>
+                                 ))}
+
+                                <option value="other">Other</option>
+                                </select>
+                                </div>
+                              </div>
+                                 
+                              <div className={Styles.fieldwallpaper}>
+                                 <textarea
+                                     placeholder="Wallpaper Description (optional)"
+                                        {...register("description")}
+                                      className={`${Styles.input} ${Styles.description}`}
+                                        />
+                                    </div>
+
+                               <div className= {Styles.submitRow} >
+                                   <div  className={Styles.field}>
+                                        {errors.accepted && (
+                                         <div className={Styles.error}>
+                                           {errors.accepted.message}
+                                         </div>
+                                        )}
+                                     <label  className={Styles.line}> 
+                                       <input
+                                         type="checkbox"
+                                         className={errors.accepted ? Styles.checkboxError : ""}
+                                         {...register("accepted", {
+                                         required: "You must accept the guidelines",
+                                          })}
+                                        />
+                                        I understand and Accept the Guidelines  
+                                     </label>
+                                  </div>
+                                          
+                                      <button type="submit" className={Styles.uploadBtn} >
+                                            Upload
+                                      </button>
+                                   </div>
+                              </form>
                         </div>
-                    ) : (
+                        ) : (
                         <>
                             <div className={Styles.uploadContent}>
                                 <div className={Styles.uploadIconWrapper}>
