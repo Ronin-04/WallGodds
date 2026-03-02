@@ -41,11 +41,14 @@ input:active {
     background: #E2E8FF;
 }
 
-.description {
-    height: 68px;
+.textarea {
+    height: 95px;
     resize: none;
 }
 
+.fieldwallpaper .input.description {
+    height: 95px;
+}
 .row {
     display: flex;
     justify-content: space-between;
