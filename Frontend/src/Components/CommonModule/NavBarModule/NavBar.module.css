@@ -268,7 +268,7 @@
         height: 12.438px;
         position: absolute;
         top: 1px;
-        right: 3.5px;
+        right: 3px;
         flex-shrink: 0;
         transition:
             opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
@@ -334,6 +334,7 @@
         width: 12.8rem;
         height: 1.5rem;
         padding: 0 0.7rem 0 0.49rem;
+        border-radius: 0.3rem;
     }
 
     .searchInput {
