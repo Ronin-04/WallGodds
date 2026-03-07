@@ -362,181 +362,216 @@
 }
 
 @media (max-width: 700px) {
-    .navbar {
-        width: 90%;
-        max-width: 30rem;
-        height: 3.5rem;
-        top: 1.5rem;
-        padding: 0 0.65rem;
-        border-radius: 0.5rem !important;
-    }
+  .navbar {
+    width: calc(100% - 2rem);
+    max-width: none;
+    height: 3.5rem;
+    top: 1.5rem;
+    padding: 0 0.65rem;
+    border-radius: 0.5rem !important;
+  }
+  .logo {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .logo img {
+    height: 1.3rem !important;
+    width: auto !important;
+    /* THIS creates a fixed visual gap between logo and navbar edge */
+    margin: 0 0 0 0.4rem !important;
+    padding: 0 !important;
+    display: block;
+    transition: 0.1s ease;
+  }
+  .actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    flex: 1;
+    margin-left: 0.5rem; /* small horizontal gap between logo and search bar */
+  }
 
-    logo {
-        flex: 1 1 auto;
-        min-width: 0;
-        display: flex;
-        align-items: center;
-        padding-top: 0.5rem;
-        margin-right: 0.5rem;
-    }
+  /* COMMON BUTTON SHAPE (search closed, hamburger, theme) */
+  .actions .hamburger,
+  .actions .theme,
+  .actions .search:not(.open) {
+    width: 1.35rem !important;
+    height: 1.35rem !important;
+    border-radius: 0.3rem !important;
+    flex: 0 0 auto !important;
+    padding: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    background: rgba(255, 255, 255, 0.87);
+  }
 
-    .logo img {
-        padding-left: 0.42rem;
-        height: 1.3rem !important;
-        width: auto !important;
-        max-width: 100%;
-        border-radius: 0.489rem;
-        flex-shrink: 1;
-        margin-top: 0.5rem;
-    }
+  .hamburger svg {
+    width: 1.34rem;
+    height: 1.34rem;
+    display: block;
+    flex-shrink: 0 !important;
+  }
 
-    .searchInput {
-        font-size: 0.8rem;
-    }
+  .actions .theme > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    flex-shrink: 0 !important;
+  }
 
-    .actions {
-        display: flex;
-        align-items: center;
-        justify-content: flex;
-        gap: 0.5rem;
-        flex-shrink: 0 !important;
-    }
+  .actions .theme img,
+  .actions .theme svg {
+    width: 0.6rem !important;
+    height: 0.61rem !important;
+    flex-shrink: 0 !important;
+    display: block !important;
+  }
 
-    .actions .search,
-    .actions .hamburger,
-    .actions .theme {
-        height: 1.3rem !important;
-        border-radius: 0.3rem !important;
-        flex-shrink: 0 !important;
-    }
+  /* SEARCH – container shares button size when closed, expands when open */
+  .actions .search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex: 0 0 auto !important;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.87);
+    /* desktop-like transition curve & timing */
+    transition:
+      background 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+      transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+      width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
 
-    .actions .search:not(.open) {
-        width: 1.7rem !important;
-        border-radius: 0.3rem !important;
-        padding: 0 !important;
-        justify-content: center !important;
-    }
+  /* CLOSED: exact same box as hamburger/theme, no pill */
+  .actions .search:not(.open) {
+    width: 1.35rem !important;
+    height: 1.35rem !important;
+    padding: 0 !important;
+    border-radius: 0.3rem !important;
+  }
 
-    .actions .search:not(.open) button {
-        width: 100% !important;
-        height: 100% !important;
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
-    }
+  /* OPEN: expands left; same height & radius (no extra pill rounding) */
+  .actions .search.open {
+    width: calc(100% - 3.7rem) !important;      /* 1.35 + 1.35 + 2 * 0.5 gap */
+    height: 1.35rem !important;
+    padding: 0 1.6rem 0 0.5rem !important;      /* room on right for icon */
+    border-radius: 0.3rem !important;
+  }
 
-    .actions .search:not(.open) .searchInput {
-        display: none !important;
-    }
+  /* Icon – ONE constant position, so it never shifts during animation */
+  .actions .search button {
+    position: absolute;
+    right: 0.175rem;                            /* centered inside 1.35rem box */
+    top: 50%;
+    transform: translateY(-50%);                /* no state-dependent transform */
+    width: 1rem;
+    height: 1rem;
+    border-radius: 0.3rem;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
 
-    .actions .search.open {
-        width: 5.5rem !important;
-        padding: 0 0.6rem !important;
-    }
+  .actions .search img {
+    width: 0.6rem !important;
+    height: 0.61rem !important;
+    flex-shrink: 0 !important;
+  }
 
-    .actions .hamburger {
-        height: 1.2rem;
-        width: 1.2rem !important;
-        padding: 0 !important;
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
-    }
+  /* Input – always in layout, only opacity changes (prevents flex jump) */
+  .searchInput {
+    flex: 1;
+    min-width: 0;
+    margin-left: 0.1rem;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    border: none;
+    outline: none;
+    background: transparent;
+    opacity: 0;
+    pointer-events: none;
+    transform: none;
+    transition: opacity 0.3s ease 0.05s;
+  }
 
-    .actions .theme {
-        width: 1.4rem !important;
-        padding: 0 !important;
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
-    }
+  .actions .search.open .searchInput {
+    opacity: 1;
+    pointer-events: auto;
+  }
 
-    .actions .theme>* {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        background: transparent;
-        border: none;
-        flex-shrink: 0 !important;
-    }
+  /* ensure input is present even when closed (no layout jump) */
+  .actions .search:not(.open) .searchInput {
+    display: block !important;
+  }
 
-    .actions .search button {
-        padding: 0 !important;
-        margin: 0 !important;
-        flex-shrink: 0 !important;
-    }
+  /* prevent any sibling from flexing when search width changes */
+  .actions > * {
+    flex: 0 0 auto !important;
+  }
 
-    .actions .search img {
-        width: 0.6rem !important;
-        height: 0.6rem !important;
-        border-width: 0.4rem !important;
-        flex-shrink: 0 !important;
-    }
+  .navigation,
+  .profile {
+    display: none !important;
+  }
 
-    .actions .theme img,
-    .actions .theme svg {
-        width: 0.6rem !important;
-        height: 0.61rem !important;
-        flex-shrink: 0 !important;
-        display: block !important;
-    }
+  .hamburger {
+    display: flex;
+    transition: all 0.2s ease;
+  }
 
-    .hamburger svg {
-        width: 1.34rem;
-        height: 1.34rem;
-        display: block;
-        flex-shrink: 0 !important;
-    }
+  .mobileOverlay {
+    position: absolute;
+    top: 5.5rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 95%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 0.2rem;
+    padding: 2rem;
+    z-index: 1000;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
 
-    .navigation,
-    .profile {
-        display: none !important;
-    }
+  :global(.dark-theme) .mobileOverlay {
+    background: rgba(25, 25, 25, 0.95);
+  }
 
-    .hamburger {
-        display: flex;
-    }
+  .mobileMenu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0;
+    text-align: center;
+  }
 
-    .mobileOverlay {
-        position: absolute;
-        top: 5.5rem;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        width: 95%;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(20px);
-        border-radius: 0.2rem;
-        padding: 2rem;
-        z-index: 1000;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    }
-
-    :global(.dark-theme) .mobileOverlay {
-        background: rgba(25, 25, 25, 0.95);
-    }
-
-    .mobileMenu {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        padding: 0;
-        text-align: center;
-    }
-
-    .mobileMenu a {
-        text-decoration: none;
-        color: inherit;
-        font-size: 1.25rem;
-        font-weight: 500;
-    }
+  .mobileMenu a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
 }
-
 :global(.dark-theme) .navbar {
     background: rgba(0, 0, 0, 0.38);
     backdrop-filter: blur(33.54999923706055px);

@@ -2,6 +2,8 @@ import { NavLink } from "react-router-dom";
 import Style from "./NavBar.module.css";
 import ThemeToggle from "../../ThemeModule/ThemeToggle";
 import { useState, useRef, useEffect, forwardRef } from "react";
+import { useLocation } from "react-router-dom";
+
 
 const NavBar = forwardRef(({ className }, ref) => {
     const [searchOpen, setSearchOpen] = useState(false);
@@ -19,6 +21,18 @@ const NavBar = forwardRef(({ className }, ref) => {
     const Github_arrow = isDark
         ? "/Github_redirect_arrow_up_lite.svg"
         : "/Github_redirect_arrow_up_dark.svg";
+    
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 700);
+    useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 700);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+}, [])
+        
+    const IconLogo = "/WallGodds_Favicon.png";
+
+    const location = useLocation();
+    const isUploadPage = location.pathname.includes("upload");
 
     useEffect(() => {
         if (searchOpen) searchRef.current?.focus();
@@ -29,12 +43,18 @@ const NavBar = forwardRef(({ className }, ref) => {
     }, [isDark]);
 
     return (
+         <>
         <div ref={ref} className={`${Style.navbar} ${className || ""}`}>
             <div className={Style.logo}>
-                <NavLink to="/">
-                    <img src={Logo} alt="WallGodds Logo" data-logo />
-                </NavLink>
-            </div>
+  <NavLink to="/">
+    <img
+  src={isMobile && searchOpen ? IconLogo : Logo}
+  alt="WallGodds Logo"
+  data-logo
+  className={isMobile && searchOpen ? Style.logoIconOnly : ""}
+/>
+  </NavLink>
+</div>
             <nav className={Style.navigation}>
                 <ul className={Style.menu}>
                     <li>
@@ -81,9 +101,12 @@ const NavBar = forwardRef(({ className }, ref) => {
                         <button>Join</button>
                     </NavLink>
                 </div>
-                <button
-                    className={Style.hamburger}
-                    onClick={() => setMenuOpen(!menuOpen)}>
+               <button
+               className={Style.hamburger}
+               onClick={() => {
+                setSearchOpen(false);   // close search
+                setMenuOpen(!menuOpen); // keep existing behavior
+                 }}>
                     <svg
                         width="45"
                         height="43"
@@ -144,7 +167,10 @@ const NavBar = forwardRef(({ className }, ref) => {
                     </svg>
                 </button>
 
-                <div className={Style.theme}>
+                <div
+                className={Style.theme}
+                onClick={() => setSearchOpen(false)}  // close search when theme clicked
+                >
                     <ThemeToggle />
                 </div>
             </div>
@@ -177,6 +203,11 @@ const NavBar = forwardRef(({ className }, ref) => {
                 </div>
             )}
         </div>
+
+        {isMobile && isUploadPage && (
+            <div className={Style.mobileNavbarSpacer}></div>
+        )}
+    </>
     );
 });
 
