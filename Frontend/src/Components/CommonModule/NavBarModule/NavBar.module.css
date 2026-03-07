@@ -318,7 +318,7 @@
 
     .actions .profile button {
         font-size: 0.9rem;
-        padding: 0 0.6rem 0.071rem 0.6rem;
+        padding: 0 .6rem .11rem;
     }    
 
     .actions .search:not(.open) {
